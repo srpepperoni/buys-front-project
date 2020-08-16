@@ -10,7 +10,9 @@ class AuthService {
         password
       })
       .then(response => {
-        if (response.data.accessToken) {
+        console.log(JSON.stringify(response.data));
+        if (response.data.token) {
+          console.log('Guardando en localstorage');
           localStorage.setItem("user", JSON.stringify(response.data));
         }
 
